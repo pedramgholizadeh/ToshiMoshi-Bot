@@ -1,7 +1,7 @@
 <?php
-$token = '7002077639:AAHpwxjbmPugTqWo_jX4wy0y21104pQlqzE';
+$token = 'YOUR_TELEGRAM_TOKEN'; // Replace with real telegram bot token , @botfather!
 
-$adminChatId = '489512081'; // Replace with the actual admin's chat ID
+$adminChatId = 'ADMIN_CHAT_ID'; // Replace with the actual admin's chat ID
 
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
@@ -10,7 +10,8 @@ $messageText = $update['message']['text'];
 $callbackQuery = $update['callback_query'];
 $photo = $update['message']['photo'];
 
-$channelUsernameId = '@musicloudy';
+// Channel ID for join check, add this bot as administrator.
+$channelUsernameId = '@pedramgholizadeh';
 // Database 
 
 
@@ -61,7 +62,7 @@ if ($messageText == '/start') {
     } else {
         $replyMarkup = [
             'inline_keyboard' => [
-                [['text' => 'Join Our TG Channel', 'url' => 'https://t.me/musicloudy']],
+                [['text' => 'Join Our TG Channel', 'url' => 'https://t.me/pedramgholizadeh']], // Channel Sponsor
                 [['text' => 'Check ✅', 'callback_data' => 'wellcome']]
             ]
         ];
@@ -80,7 +81,7 @@ if ($callbackQuery) {
         if ($chatMemberStatus == 'member' || $chatMemberStatus == 'administrator' || $chatMemberStatus == 'creator') {
             $replyMarkup = [
                 'inline_keyboard' => [
-                    [['text' => 'Start Mining ⚡️' , 'url' => 'https://t.me/ToshiMoshiBot/ToshiMoshi']],
+                    [['text' => 'Start Mining ⚡️' , 'url' => 'https://t.me/ToshiMoshiBot/ToshiMoshi']], // Insert your webapp bot URL here
                 ],
                 'resize_keyboard' => true
             ];
@@ -89,7 +90,7 @@ if ($callbackQuery) {
         } else {
             $replyMarkup = [
                 'inline_keyboard' => [
-                    [['text' => 'Join Our TG Channel', 'url' => 'https://t.me/musicloudy']],
+                    [['text' => 'Join Our TG Channel', 'url' => 'https://t.me/pedramgholizadeh']], // Channel Sponsor!
                     [['text' => 'Check ✅', 'callback_data' => 'wellcome']]
                 ]
             ];
@@ -99,7 +100,7 @@ if ($callbackQuery) {
     }
 }
 
-// sendMessage($adminChatId , 'hi');
+
 
 
 

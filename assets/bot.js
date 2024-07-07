@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     $.ajax({
         type: 'POST',
-        url: 'https://pedram.webiro.ir/',
+        url: 'https://...../index.php', // Replace this url with real main domain (index.php)
         data: {
             user_id: userId,
             first_name: firstName,
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     $.ajax({
         type: 'POST',
-        url: 'https://pedram.webiro.ir/api/InsertUserData.php',
+        url: 'https://..../api/InsertUserData.php', // Replace ... with real domain address
         data: {
             user_id: userId,
             first_name: firstName,
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $('section#footer').fadeOut();
         $.ajax({
             type: 'POST',
-            url: 'https://pedram.webiro.ir/api/GetCurrentPoints.php',
+            url: 'https://...../api/GetCurrentPoints.php', // Replace ... with real domain address
             data: {
                 userID: userId
             },
@@ -98,7 +98,7 @@ function updateCoinWithApi() {
     var collected = $('div#total').attr('number');
     $.ajax({
         type: 'POST',
-        url: 'https://pedram.webiro.ir/api/UpdateOnTap.php',
+        url: 'https://...../api/UpdateOnTap.php', // Replace ... with real domain address
         data: {
             telegram_user_id: telegram_user_id,
             collected: collected
